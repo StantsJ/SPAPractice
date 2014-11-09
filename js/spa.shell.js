@@ -40,11 +40,27 @@ spa.shell = (function(){
 	//---------- Begin Utility Methods ----------
 	//---------- End Utility Methods ----------
 
-	//---------- Begin Utility Methods ----------
+	//---------- Begin DOM Methods ----------
 	// Begin DOM Method /setJqueryMap/
 	setJqueryMap = function(){
 		var $container = stateMap.$container;
 		jqueryMap = { $container: $container}
 	}
-	//---------- End Utility Methods ----------
+	// End DOM Method /setJqueryMap/
+	//---------- End DOM Methods ----------
+	
+	//---------- Begin Event Handlers ----------
+	//---------- End Event Handlers ----------
+	
+	//---------- Begin Public Metho ----------
+	// Begin Public Method /initMethod/
+	initModule = function($container) {
+		stateMap.$container = $container;
+		$container.html(configMap.main_html);
+		setJqueryMap();
+	}	
+	// End Public Method /initMethod/
+	
+	return {initModule: initModule};
+	//---------- End Public Metho ----------
 }());
